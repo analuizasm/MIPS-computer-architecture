@@ -22,7 +22,7 @@
 	
 	Fibonacci:
 		
-		beq $a0, 0, Fibo_zero #n = 0 (sequencia começando em zero (0 1 1 2...)
+		beq $a0, 0, Fibo_zero #n = 0 (sequencia comeÃ§ando em zero (0 1 1 2...)
 		beq $a0, 1, Fibo_um #n = 1 
 		bgt $a0, 1, Fibonacci_rec  # n > 1
 		
@@ -37,8 +37,8 @@
 			
 			
 		Fibonacci_rec:
-			addi $sp, $sp, -12 #prepara pilha para 3 espaços
-			sw $ra, 8($sp) #salvando endereço de retorno
+			addi $sp, $sp, -12 #prepara pilha para 3 espaÃ§os
+			sw $ra, 8($sp) #salvando endereÃ§o de retorno
 			sw $a0, 0($sp) #salva o n atual
 			
 			#f(n-1)
@@ -55,11 +55,11 @@
 			lw $t0, 4($sp) #salva valor retornado em uma outra varival para nao sobrescrever o $v0
 			add $v0, $t0, $v0 #fib = fib(n-1) + fib(n+2)
 			
-			lw $ra, 8($sp) #carrega endereço de retorno anterior
+			lw $ra, 8($sp) #carrega endereÃ§o de retorno anterior
 			addi $sp, $sp, 12 #esvazia pilha
 			jr $ra #retorna
 		
-	#print e finalização		
+	#print e finalizaÃ§Ã£o		
 	Exit: 
 	
 		li, $v0, 4
